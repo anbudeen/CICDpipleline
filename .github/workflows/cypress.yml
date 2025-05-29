@@ -25,8 +25,8 @@ jobs:
       - name: Verify Cypress cache
         run: npx cypress verify
 
-      - name: Run Cypress tests
-        run: npx cypress run --spec "cypress/e2e/mytest.cy.js"
+      - name: Run Cypress tests in headed mode
+        run: npx cypress run --headed --browser chrome --spec "cypress/e2e/mytest.cy.js"
 
       - name: Upload videos and screenshots on failure
         if: failure()
